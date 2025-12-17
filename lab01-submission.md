@@ -1,4 +1,5 @@
 https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025
+
 ### 01-editor.png
 ![](lab01/01-editor.png)
 
@@ -7,3 +8,11 @@ https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025
 
 ### 03-actions-log.png
 ![](lab01/03-actions-log.png)
+
+https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025/blob/main/openapi/openapi.yaml#L31-L41
+
+https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025/blob/main/openapi/openapi.yaml#L43-L51
+
+https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025/blob/main/openapi/openapi.yaml#L78-L93
+
+https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025/blob/main/openapi/openapi.yaml#L54-L74
