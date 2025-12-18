@@ -11,3 +11,9 @@ https://github.com/Chung0913Shaobin/wsse-student-enrollment-labs-2025
 
 ### 04-cognito-appclient.png
 ![](Lab02/04-cognito-appclient.png)
+
+### 05-jwt-access-claims.png
+![](Lab02/05-jwt-access-claims.png)
+
+### 06-editor-no-errors.png
+![](Lab02/06-editor-no-errors.png)
