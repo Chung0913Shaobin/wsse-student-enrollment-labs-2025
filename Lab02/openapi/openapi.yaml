@@ -11,8 +11,8 @@ components:
       type: oauth2
       flows:
         authorizationCode:
-          authorizationUrl: "https://<https://ap-southeast-2vpcce3wuu.auth.ap-southeast-2.amazoncognito.com>.auth.<region>.amazoncognito.com/oauth2/authorize"
-          tokenUrl:         "https://<https://ap-southeast-2vpcce3wuu.auth.ap-southeast-2.amazoncognito.com>.auth.<region>.amazoncognito.com/oauth2/token"
+          authorizationUrl: "https://ap-southeast-2vpcce3wuu.auth.ap-southeast-2.amazoncognito.com/oauth2/authorize"
+          tokenUrl:         "https://ap-southeast-2vpcce3wuu.auth.ap-southeast-2.amazoncognito.com/oauth2/token"
           scopes:
             students.read:  "Read student data"
             students.write: "Create/modify student data"
