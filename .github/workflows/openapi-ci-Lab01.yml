@@ -2,7 +2,7 @@ name: OpenAPI Minimal CI (Lab01)
 
 on:
   pull_request:
-    paths: ['openapi/**/*.yaml']
+    paths: ['Lab01/openapi/**/*.yaml']
   push:
     branches: [main]
 
