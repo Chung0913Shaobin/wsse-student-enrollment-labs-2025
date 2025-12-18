@@ -1,4 +1,4 @@
-name: OpenAPI CI (lab02)
+name: OpenAPI Minimal CI (Lab02)
 
 on:
   push:
@@ -28,4 +28,4 @@ jobs:
         run: npm i -g @apidevtools/swagger-cli@4
 
       - name: Validate OpenAPI
-        run: swagger-cli validate openapi/openapi.yaml
+        run: swagger-cli validate Lab02/openapi/openapi.yaml
