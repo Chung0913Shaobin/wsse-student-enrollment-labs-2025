@@ -14,8 +14,8 @@ components:
       type: oauth2
       flows:
         authorizationCode:
-          authorizationUrl: "https://<domain>.auth.<region>.amazoncognito.com/oauth2/authorize"
-          tokenUrl: "https://<domain>.auth.<region>.amazoncognito.com/oauth2/token"
+          authorizationUrl: "https://example.auth.ap-northeast-1.amazoncognito.com/oauth2/authorize"
+          tokenUrl: "https://example.auth.ap-northeast-1.amazoncognito.com/oauth2/token"
           scopes:
             students.read: "Read student data"
             students.write: "Create/modify student data"
