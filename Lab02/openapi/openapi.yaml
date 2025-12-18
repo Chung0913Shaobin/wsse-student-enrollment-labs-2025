@@ -1,42 +1,58 @@
 openapi: "3.0.0"
+
 info:
   title: "Student Enrollment API"
   version: "0.2.0"
+
 servers:
   - url: "https://api.example.edu/api/v1"
+    description: "Production"
+
+components:
+  securitySchemes:
+    CognitoOAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: "https://<domain>.auth.<region>.amazoncognito.com/oauth2/authorize"
+          tokenUrl: "https://<domain>.auth.<region>.amazoncognito.com/oauth2/token"
+          scopes:
+            students.read: "Read student data"
+            students.write: "Create/modify student data"
+
+# 全域預設：需要 students.read
+security:
+  - CognitoOAuth2: [students.read]
 
 paths:
   /health:
     get:
       summary: "Health check"
       description: "服務是否正常"
-      security: []
+      security: []   # 覆寫：匿名端點
       responses:
-        "200": { description: "OK" }
-/students:
-  get:
-    summary: "List students"
-    description: "需要 students.read scope"
-    security:
-      - CognitoOAuth2: [students.write]
-    responses:
-      "201":
-        description: "Created"
-        headers:
-          Location:
-            description: "URL of created resource"
-            schema: { type: string, example: "/api/v1/students/102" }
-            
-components:
-  securitySchemes:
-    CognitoOAuth2:
-      type: oayth2
-      flows:
-        aythorizationCode:
-          authorizationUrl: "https://<domain>.auth.<region>.amazoncognito.com/oauth2/authorize"
-          tokenUrl:         "https://<domain>.auth.<region>.amazoncognito.com/oauth2/token"
-          scopes:
-            students.read: "Read student data"
-            students.write: "Create/modify student data"
-security:
-  - CognitoOAuth2: [students.read]
+        "200":
+          description: "OK"
+
+  /students:
+    get:
+      summary: "List students"
+      description: "需要 students.read scope"
+      responses:
+        "200":
+          description: "OK"
+
+    post:
+      summary: "Create student"
+      description: "需要 students.write scope"
+      security:
+        - CognitoOAuth2: [students.write]  # 覆寫：寫入需要 write
+      responses:
+        "201":
+          description: "Created"
+          headers:
+            Location:
+              description: "URL of created resource"
+              schema:
+                type: string
+                example: "/api/v1/students/102"
