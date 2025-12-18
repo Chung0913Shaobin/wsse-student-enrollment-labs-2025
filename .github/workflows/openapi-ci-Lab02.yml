@@ -1,16 +1,31 @@
-name: OpenAPI Minimal CI (lab02)
+name: OpenAPI CI (lab02)
+
 on:
+  push:
+    branches: [ "main", "Lab02" ]
+    paths:
+      - "openapi/**"
+      - ".github/workflows/openapi-ci-Lab02.yml"
   pull_request:
-    paths: ['openapi/**/*.yaml', 'openapi/**/*.yml']
+    branches: [ "main" ]
+    paths:
+      - "openapi/**"
+      - ".github/workflows/openapi-ci-Lab02.yml"
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '18' }
-      - name: Validate with swagger-cli
-        run: |
-          npm i -g @apidevtools/swagger-cli@4
-          swagger-cli validate Lab02/openapi/openapi.yaml
-          
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install swagger-cli
+        run: npm i -g @apidevtools/swagger-cli@4
+
+      - name: Validate OpenAPI
+        run: swagger-cli validate openapi/openapi.yaml
