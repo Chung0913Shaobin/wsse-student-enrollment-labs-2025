@@ -1,4 +1,4 @@
-name: OpenAPI Minimal CI
+name: OpenAPI Minimal CI (Lab01)
 
 on:
   pull_request:
